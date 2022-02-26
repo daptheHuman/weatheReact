@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/wheateReact/static/css/main.9631c5d0.css",
+    "main.js": "/wheateReact/static/js/main.592db727.js",
+    "static/js/mapbox-gl-csp-worker.ceb363ed.worker.js": "/wheateReact/static/js/mapbox-gl-csp-worker.ceb363ed.worker.js",
+    "index.html": "/wheateReact/index.html",
+    "main.9631c5d0.css.map": "/wheateReact/static/css/main.9631c5d0.css.map",
+    "main.592db727.js.map": "/wheateReact/static/js/main.592db727.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9631c5d0.css",
+    "static/js/main.592db727.js"
+  ]
+}
