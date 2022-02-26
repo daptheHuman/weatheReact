@@ -18,7 +18,7 @@ const Search = () => {
   }, [hour]);
 
   return (
-    <div className="h-screen w-screen bg-gradient-to-l from-baby-blue to-blue-crayola">
+    <div className="">
       <Navbar />
 
       <div className="relative z-10 flex flex-col items-center justify-center">

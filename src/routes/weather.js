@@ -37,7 +37,7 @@ const Weather = () => {
   }
 
   return (
-    <div className="bg-gradient-to-l from-baby-blue to-blue-crayola">
+    <div className="">
       <Navbar />
       <Searchbar />
 

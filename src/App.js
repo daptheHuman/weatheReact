@@ -10,10 +10,12 @@ const App = () => {
   }, []);
 
   return (
-    <Routes>
-      <Route path="/" element={<Search />} />
-      <Route path="/search/" element={<Weather />} />
-    </Routes>
+    <div className="min-h-screen bg-gradient-to-l from-baby-blue to-blue-crayola">
+      <Routes>
+        <Route path="/" element={<Search />} />
+        <Route path="/search/" element={<Weather />} />
+      </Routes>
+    </div>
   );
 };
 
