@@ -1,7 +1,13 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/no-webpack-loader-syntax */
 import { Map as MapGL, Marker, NavigationControl } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import mapboxgl from 'mapbox-gl';
+
+mapboxgl.workerClass =
+  require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
 const Map = ({ lat, lon }) => {
   const [viewport, setViewport] = useState({
