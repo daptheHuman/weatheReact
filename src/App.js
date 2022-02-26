@@ -6,7 +6,7 @@ import Search from './routes/search';
 
 const App = () => {
   useEffect(() => {
-    document.title = 'WheaterReact';
+    document.title = 'weatherReact';
   }, []);
 
   return (
