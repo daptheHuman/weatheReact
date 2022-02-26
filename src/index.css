@@ -30,5 +30,5 @@ body {
   backdrop-filter: blur(40px);
   /* Note: backdrop-filter has minimal browser support */
 
-  border-radius: 50px;
+  @apply rounded-xl;
 }
