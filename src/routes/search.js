@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Searchbar from '../components/Searchbar';
+import rocket from '../assets/3d/rocket.svg';
 
 const Search = () => {
   const date = new Date();
@@ -30,7 +31,7 @@ const Search = () => {
       </div>
 
       <img
-        src="/assets/3d/rocket.svg"
+        src={rocket}
         alt="rocket"
         className="absolute right-0 top-0 z-0 h-3/4  md:translate-y-40 "
       />
