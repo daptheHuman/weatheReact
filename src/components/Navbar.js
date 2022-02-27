@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { SparklesIcon } from '@heroicons/react/solid';
 import { useState } from 'react';
+import favicon from '../assets/favicon.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +10,7 @@ const Navbar = () => {
     <nav className="relative z-20 flex items-center justify-between px-4 py-4 md:px-8">
       <Link to="/" className="text-2xl font-bold text-white">
         <div className="mr-6 flex flex-shrink-0 items-center text-white">
-          <img src="favicon.png" alt="logo" className="h-10 md:h-16" />
+          <img src={favicon} alt="logo" className="h-10 md:h-16" />
           <span className="text-lg font-normal tracking-tight md:px-8 md:text-2xl">
             weatheReact
           </span>
