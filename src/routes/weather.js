@@ -29,7 +29,6 @@ const Weather = () => {
     });
   }, [lat, lon]);
 
-  console.log(weather);
   const { temp, tempMin, tempMax, description, icon } = weather || {};
 
   if (!weather) {

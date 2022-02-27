@@ -1,11 +1,8 @@
 import { Link } from 'react-router-dom';
 import { SparklesIcon } from '@heroicons/react/solid';
-import { useState } from 'react';
 import favicon from '../assets/favicon.png';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <nav className="relative z-20 flex items-center justify-between px-4 py-4 md:px-8">
       <Link to="/" className="text-2xl font-bold text-white">
