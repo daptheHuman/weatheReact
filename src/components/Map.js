@@ -3,7 +3,7 @@
 import { Map as MapGL, Marker, NavigationControl } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 
 mapboxgl.workerClass =
@@ -16,9 +16,19 @@ const Map = ({ lat, lon }) => {
     zoom: 15,
   });
 
+  // Change the viewport when the lat lo changed
+  useEffect(() => {
+    setViewport({
+      latitude: parseFloat(lat),
+      longitude: parseFloat(lon),
+      zoom: 15,
+    });
+  }, [lat, lon]);
+
   return (
     <MapGL
-      initialViewState={viewport}
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...viewport}
       style={{
         height: '100%',
         width: '100%',
