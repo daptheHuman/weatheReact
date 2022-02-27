@@ -6,6 +6,7 @@ import Map from '../components/Map';
 import Searchbar from '../components/Searchbar';
 import Object from '../components/Object';
 import getCurrentWeather from '../services/weather';
+import Loading from '../components/Loading';
 
 const Temp = ({ temp }) => {
   return <span>{temp.toFixed(0)}ºC</span>;
@@ -13,6 +14,7 @@ const Temp = ({ temp }) => {
 
 const Weather = () => {
   const [weather, setWeather] = useState(null);
+  const [loading, setLoading] = useState(true);
   // eslint-disable-next-line no-unused-vars
   const [search, setSearch] = useSearchParams();
 
@@ -28,12 +30,14 @@ const Weather = () => {
     getCurrentWeather(lat, lon).then((currentWeather) => {
       setWeather(currentWeather);
     });
+
+    setTimeout(setLoading(false), 2000);
   }, [lat, lon]);
 
   const { temp, tempMin, tempMax, description, icon } = weather || {};
 
-  if (!weather) {
-    return <div>Loading...</div>;
+  if (!weather && loading) {
+    return <Loading />;
   }
 
   return (

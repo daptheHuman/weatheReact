@@ -10,7 +10,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-l from-baby-blue to-blue-crayola">
+    <div className="h-full min-h-screen bg-gradient-to-l from-baby-blue to-blue-crayola">
       <Routes>
         <Route path="/" element={<Search />} />
         <Route path="/search/" element={<Weather />} />
