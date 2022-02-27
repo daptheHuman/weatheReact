@@ -13,6 +13,7 @@ const Temp = ({ temp }) => {
 
 const Weather = () => {
   const [weather, setWeather] = useState(null);
+  // eslint-disable-next-line no-unused-vars
   const [search, setSearch] = useSearchParams();
 
   // get lon lat from search params and making as a single object
@@ -29,7 +30,6 @@ const Weather = () => {
     });
   }, [lat, lon]);
 
-  console.log(weather);
   const { temp, tempMin, tempMax, description, icon } = weather || {};
 
   if (!weather) {
