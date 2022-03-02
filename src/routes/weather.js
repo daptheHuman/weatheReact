@@ -6,7 +6,7 @@ import { parentAnim, childAnim } from '../utils/anim';
 import Navbar from '../components/Navbar';
 import Map from '../components/Map';
 import Searchbar from '../components/Searchbar';
-import Object from '../components/Object';
+import WeatherIcon from '../components/WeatherIcon';
 import getCurrentWeather from '../services/weather';
 import Loading from '../components/Loading';
 
@@ -37,7 +37,7 @@ const Weather = () => {
   }, [lat, lon]);
 
   const { temp, tempMin, tempMax, description, icon } = weather || {};
-  const MotionWeatherIcon = m(Object, { forwardMotionProps: true });
+  const MotionWeatherIcon = m(WeatherIcon, { forwardMotionProps: true });
   if (!weather && loading) {
     return <Loading />;
   }

@@ -3,13 +3,13 @@
 import propTypes from 'prop-types';
 import { forwardRef } from 'react';
 
-const Object = forwardRef(({ icon }, ref) => {
+const WeatherIcon = forwardRef(({ icon }, ref) => {
   const weatherImages = require(`../assets/3d/weather/${icon}.png`);
   return <img ref={ref} src={weatherImages} className="" alt={icon} />;
 });
 
-Object.propTypes = {
+WeatherIcon.propTypes = {
   icon: propTypes.string.isRequired,
 };
 
-export default Object;
+export default WeatherIcon;
