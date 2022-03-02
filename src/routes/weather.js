@@ -38,7 +38,7 @@ const Weather = () => {
 
   const { temp, tempMin, tempMax, description, icon } = weather || {};
   const MotionWeatherIcon = m(WeatherIcon, { forwardMotionProps: true });
-  if (!weather && loading) {
+  if (!weather && !loading) {
     return <Loading />;
   }
   return (
