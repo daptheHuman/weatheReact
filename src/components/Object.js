@@ -1,11 +1,12 @@
 /* eslint-disable global-require */
 /* eslint-disable import/no-dynamic-require */
 import propTypes from 'prop-types';
+import { forwardRef } from 'react';
 
-const Object = ({ icon }) => {
+const Object = forwardRef(({ icon }, ref) => {
   const weatherImages = require(`../assets/3d/weather/${icon}.png`);
-  return <img src={weatherImages} className="" alt={icon} />;
-};
+  return <img ref={ref} src={weatherImages} className="" alt={icon} />;
+});
 
 Object.propTypes = {
   icon: propTypes.string.isRequired,

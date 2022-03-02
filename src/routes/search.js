@@ -1,41 +1,46 @@
-import { useEffect, useState } from 'react';
+import { m } from 'framer-motion';
+import { parentAnim, childAnim, rocketAnim } from '../utils/anim';
 import Navbar from '../components/Navbar';
 import Searchbar from '../components/Searchbar';
+import Greet from '../utils/greet';
 import rocket from '../assets/3d/rocket.svg';
 
 const Search = () => {
-  const date = new Date();
-  const hour = date.getHours();
-
-  const [greet, setGreet] = useState('');
-  useEffect(() => {
-    if (hour >= 0 && hour < 12) {
-      setGreet('Good Morning');
-    } else if (hour >= 12 && hour < 18) {
-      setGreet('Good Afternoon');
-    } else {
-      setGreet('Good Evening');
-    }
-  }, [hour]);
+  const MotionSearchbar = m(Searchbar);
 
   return (
-    <div className="">
+    <>
       <Navbar />
 
-      <div className="relative z-10 flex flex-col items-center justify-center">
-        <h1 className="text-5xl font-black text-white md:text-9xl">{greet}!</h1>
-        <h1 className="p-2 font-light text-white md:text-4xl">
+      <m.div
+        variants={parentAnim}
+        animate="show"
+        initial="initial"
+        className="relative z-10 flex flex-col items-center justify-center opacity-0"
+      >
+        <m.h1
+          className="text-5xl font-black text-white md:text-9xl"
+          variants={childAnim}
+        >
+          <Greet />!
+        </m.h1>
+        <m.h1
+          variants={childAnim}
+          className="p-2 font-light text-white md:text-4xl"
+        >
           How is the weather out today?
-        </h1>
-        <Searchbar />
-      </div>
+        </m.h1>
+        <MotionSearchbar variants={childAnim} />
+      </m.div>
 
-      <img
+      <m.img
+        variants={rocketAnim}
+        animate="show"
+        initial="initial"
         src={rocket}
-        alt="rocket"
-        className="absolute right-0 top-0 z-0 h-3/4  md:translate-y-40 "
+        className="absolute right-0 bottom-0 z-0 h-3/4 md:translate-y-40 "
       />
-    </div>
+    </>
   );
 };
 

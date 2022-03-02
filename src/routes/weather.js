@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
-import propTypes from 'prop-types';
 import { useSearchParams } from 'react-router-dom';
+import propTypes from 'prop-types';
+import { m } from 'framer-motion';
+import { parentAnim, childAnim } from '../utils/anim';
 import Navbar from '../components/Navbar';
 import Map from '../components/Map';
 import Searchbar from '../components/Searchbar';
@@ -35,47 +37,70 @@ const Weather = () => {
   }, [lat, lon]);
 
   const { temp, tempMin, tempMax, description, icon } = weather || {};
-
+  const MotionWeatherIcon = m(Object, { forwardMotionProps: true });
   if (!weather && loading) {
     return <Loading />;
   }
-
   return (
-    <div className="">
+    <>
       <Navbar />
       <Searchbar />
 
-      <div className="z-10 flex flex-col items-center justify-center gap-32 px-12 pt-4 pb-20 md:px-44">
+      <m.div
+        variants={parentAnim}
+        initial="initial"
+        animate="show"
+        className="z-10 flex flex-col items-center justify-center gap-32 px-12 pt-4 pb-20 md:px-44"
+      >
         <div className="glassmorph h-80 w-full ">
           <Map lat={lat} lon={lon} />
         </div>
 
         {weather && (
-          <div className="glassmorph flex flex-col justify-between rounded-xl px-12 py-12 md:flex-row-reverse md:px-20">
-            <div className="-translate-y-32 md:w-1/3">
-              <Object icon={icon} />
-              <span className="text-4xl font-bold uppercase text-white">
+          <m.div
+            variants={parentAnim}
+            initial="initial"
+            whileInView="show"
+            className="glassmorph flex flex-col justify-between rounded-xl px-12 py-12 md:flex-row-reverse md:px-20"
+          >
+            <m.div layout className="flex w-min -translate-y-32 flex-col">
+              <MotionWeatherIcon variants={childAnim} icon={icon} />
+              <m.span
+                variants={childAnim}
+                className="text-4xl font-bold uppercase text-white"
+              >
                 {description}
-              </span>
-            </div>
+              </m.span>
+            </m.div>
 
-            <div className="flex flex-col items-start justify-between md:w-1/2">
-              <span className="text-4xl font-normal text-white">
+            <m.div
+              variants={parentAnim}
+              initial="initial"
+              whileInView="show"
+              className="flex flex-col items-start justify-between md:w-1/2"
+            >
+              <m.span
+                variants={childAnim}
+                className="text-4xl font-normal text-white"
+              >
                 {location}
-              </span>
-              <p className="text-7xl font-bold text-white">
+              </m.span>
+              <m.p
+                variants={childAnim}
+                className="text-7xl font-bold text-white"
+              >
                 <Temp temp={temp} />
-              </p>
-              <p className="text-4xl text-white">
+              </m.p>
+              <m.p variants={childAnim} className="text-4xl text-white">
                 Max: <Temp temp={tempMax} />
                 <br />
                 Min: <Temp temp={tempMin} />
-              </p>
-            </div>
-          </div>
+              </m.p>
+            </m.div>
+          </m.div>
         )}
-      </div>
-    </div>
+      </m.div>
+    </>
   );
 };
 
