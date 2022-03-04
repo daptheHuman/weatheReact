@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import propTypes from 'prop-types';
 import { m } from 'framer-motion';
 import { parentAnim, childAnim } from '../utils/anim';
+import Temp from '../utils/temp';
 import Navbar from '../components/Navbar';
 import Map from '../components/Map';
 import Searchbar from '../components/Searchbar';
@@ -10,15 +10,12 @@ import WeatherIcon from '../components/WeatherIcon';
 import getCurrentWeather from '../services/weather';
 import Loading from '../components/Loading';
 
-const Temp = ({ temp }) => {
-  return <span>{temp.toFixed(0)}ºC</span>;
-};
-
 const Weather = () => {
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(true);
   // eslint-disable-next-line no-unused-vars
   const [search, setSearch] = useSearchParams();
+  const { temp, tempMin, tempMax, description, icon } = weather || {};
 
   // get lon lat from search params and making as a single object
   const { lat, lon, location } = {
@@ -36,8 +33,9 @@ const Weather = () => {
     setTimeout(setLoading(false), 2000);
   }, [lat, lon]);
 
-  const { temp, tempMin, tempMax, description, icon } = weather || {};
+  // Framer Motion Custom Component
   const MotionWeatherIcon = m(WeatherIcon, { forwardMotionProps: true });
+
   if (!weather && !loading) {
     return <Loading />;
   }
@@ -61,7 +59,7 @@ const Weather = () => {
             variants={parentAnim}
             initial="initial"
             whileInView="show"
-            className="glassmorph flex flex-col justify-between rounded-xl px-12 py-12 md:flex-row-reverse md:px-20"
+            className="glassmorph flex w-full flex-col justify-between rounded-xl px-12 py-12 md:flex-row-reverse md:px-20"
           >
             <m.div layout className="flex w-min -translate-y-32 flex-col">
               <MotionWeatherIcon variants={childAnim} icon={icon} />
@@ -85,6 +83,7 @@ const Weather = () => {
               >
                 {location}
               </m.span>
+
               <m.p
                 variants={childAnim}
                 className="text-7xl font-bold text-white"
@@ -102,10 +101,6 @@ const Weather = () => {
       </m.div>
     </>
   );
-};
-
-Temp.propTypes = {
-  temp: propTypes.number.isRequired,
 };
 
 export default Weather;
