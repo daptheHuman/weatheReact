@@ -48,7 +48,7 @@ const Weather = () => {
         variants={parentAnim}
         initial="initial"
         animate="show"
-        className="z-10 flex flex-col items-center justify-center gap-32 px-12 pt-4 pb-20 md:px-44"
+        className="z-10 flex flex-col items-center justify-center gap-32 overflow-y-hidden px-12 pt-4 pb-20 md:px-44"
       >
         <div className="glassmorph h-80 w-full ">
           <Map lat={lat} lon={lon} />
@@ -75,7 +75,7 @@ const Weather = () => {
               variants={parentAnim}
               initial="initial"
               whileInView="show"
-              className="flex flex-col items-start justify-between md:w-1/2"
+              className="flex flex-col items-start justify-between overflow-hidden md:w-1/2"
             >
               <m.span
                 variants={childAnim}
