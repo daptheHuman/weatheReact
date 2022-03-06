@@ -89,7 +89,7 @@ const Searchbar = () => {
         <m.div
           variants={popupAnim}
           animate={searchResults.length > 0 ? 'show' : 'hidden'}
-          className="z-10 mx-auto flex h-36 -translate-y-6 flex-col overflow-auto rounded-b-lg bg-baby-blue p-2 md:w-1/3"
+          className="z-10 mx-auto flex h-36 w-1/2 -translate-y-6 flex-col overflow-auto rounded-b-lg bg-baby-blue p-2 md:w-1/3"
         >
           {searchResults.map((result) => (
             <button
