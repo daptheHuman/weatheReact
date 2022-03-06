@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/weatheReact/static/css/main.25265f92.css",
-    "main.js": "/weatheReact/static/js/main.d320ae13.js",
+    "main.css": "/weatheReact/static/css/main.5292085c.css",
+    "main.js": "/weatheReact/static/js/main.83360256.js",
     "static/media/rocket.svg": "/weatheReact/static/media/rocket.bcec1770d3ac01f738820e0529104496.svg",
     "static/media/02d.png": "/weatheReact/static/media/02d.94bb00500e4bee42d34c.png",
     "static/media/04d.png": "/weatheReact/static/media/04d.7483085dcd1b9e56c542.png",
@@ -22,14 +22,14 @@
     "static/media/robot.png": "/weatheReact/static/media/robot.b027c2d67ba76d823494.png",
     "static/media/13d.png": "/weatheReact/static/media/13d.7c61de1f30b49f9622cd.png",
     "static/media/13n.png": "/weatheReact/static/media/13n.7c61de1f30b49f9622cd.png",
-    "static/js/mapbox-gl-csp-worker.b30cd17d.worker.js": "/weatheReact/static/js/mapbox-gl-csp-worker.b30cd17d.worker.js",
+    "static/js/mapbox-gl-csp-worker.22783551.worker.js": "/weatheReact/static/js/mapbox-gl-csp-worker.22783551.worker.js",
     "static/media/favicon.png": "/weatheReact/static/media/favicon.6d48da504f4816188c8d.png",
     "index.html": "/weatheReact/index.html",
-    "main.25265f92.css.map": "/weatheReact/static/css/main.25265f92.css.map",
-    "main.d320ae13.js.map": "/weatheReact/static/js/main.d320ae13.js.map"
+    "main.5292085c.css.map": "/weatheReact/static/css/main.5292085c.css.map",
+    "main.83360256.js.map": "/weatheReact/static/js/main.83360256.js.map"
   },
   "entrypoints": [
-    "static/css/main.25265f92.css",
-    "static/js/main.d320ae13.js"
+    "static/css/main.5292085c.css",
+    "static/js/main.83360256.js"
   ]
 }
