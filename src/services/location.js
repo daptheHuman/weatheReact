@@ -14,6 +14,19 @@ const getLongLat = async (addressQ) => {
   return { lat, lon, location };
 };
 
-const getAllCity = async () => {};
+const searchCompletion = async (textQuery) => {
+  const response = await axios({
+    method: 'get',
+    url: `${endpoint}/v1/autocomplete.php?key=${token}&q=${textQuery}&dedupe=1`,
+  });
+  const displayName = response.data.map((city) => {
+    // return display_name, place_id
+    return {
+      display_name: city.display_name,
+      place_id: city.place_id,
+    };
+  });
+  return displayName;
+};
 
-export { getLongLat, getAllCity };
+export { getLongLat, searchCompletion };

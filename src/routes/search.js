@@ -6,8 +6,6 @@ import Greet from '../utils/greet';
 import rocket from '../assets/3d/rocket.svg';
 
 const Search = () => {
-  const MotionSearchbar = m(Searchbar);
-
   return (
     <>
       <Navbar />
@@ -30,7 +28,7 @@ const Search = () => {
         >
           How is the weather out today?
         </m.h1>
-        <MotionSearchbar variants={childAnim} />
+        <Searchbar />
       </m.div>
 
       <m.img

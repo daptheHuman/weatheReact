@@ -44,4 +44,25 @@ const rocketAnim = {
   },
 };
 
-export { childAnim, parentAnim, rocketAnim };
+const popupAnim = {
+  hidden: {
+    opacity: 0,
+    height: 0,
+  },
+  show: {
+    opacity: 1,
+    height: '8rem',
+    transition: {
+      duration: 0.5,
+    },
+  },
+  showModal: {
+    opacity: 1,
+    height: '100%',
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
+export { childAnim, parentAnim, rocketAnim, popupAnim };
